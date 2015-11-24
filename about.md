@@ -3,9 +3,6 @@ layout: page
 title: About
 permalink: /about/
 ---
-
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
-
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+Eamonn is into lots of things, His interests include Graphics and Game engine development, bitcoin and blockchain technology.
+He is currently teaching himself Emacs24, which a voyage in itself.
+He is also active in C++, Linux and Bitcoin user groups in his home city of Dublin Ireland.
