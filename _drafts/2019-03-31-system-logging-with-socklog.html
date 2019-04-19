@@ -1,0 +1,12 @@
+---
+layout: post
+title: System logging with socklog
+date: '2019-03-31T08:29:00.001-07:00'
+author: "@eamoc"
+tags: 
+modified_time: '2019-03-31T08:45:07.376-07:00'
+blogger_id: tag:blogger.com,1999:blog-6955428370236550107.post-4323877315036666945
+blogger_orig_url: https://eamoc.blogspot.com/2019/03/system-logging-with-socklog.html
+---
+
+To set up logging with Void linux, a number of packages are available, including <br />rsyslog, metalog, and others. However I use socklog, which was created by the same guy who wrote runit, so I am going to use it.<br />to install do:<br /><br /><div style="text-align: center;"><b>xbps-install -S socklog-void</b></div><br />then add my username to the socklog group:<br /><br /><div style="text-align: center;"><b>usermod -aG socklog eamoc</b></div><div style="text-align: left;"><br /></div><div style="text-align: left;">Finally start the following services:</div><div style="text-align: center;"><b>socklog-unix</b></div><div style="text-align: center;"><b>nanoklogd</b></div><div style="text-align: left;"><br /></div><div style="text-align: center;"><b>sudo ln -s /etc/sv/socklog-unix /var/service&nbsp;</b></div><div style="text-align: center;"><b>sudo ln -s /etc/sv/nanoklogd /var/service</b></div><div style="text-align: left;"><br /></div><div style="text-align: left;"><br /></div>

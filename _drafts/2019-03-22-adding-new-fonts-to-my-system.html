@@ -1,0 +1,12 @@
+---
+layout: post
+title: Adding new fonts to my system.
+date: '2019-03-22T11:48:00.000-07:00'
+author: "@eamoc"
+tags: 
+modified_time: '2019-03-22T11:48:34.238-07:00'
+blogger_id: tag:blogger.com,1999:blog-6955428370236550107.post-6939180802375635597
+blogger_orig_url: https://eamoc.blogspot.com/2019/03/adding-new-fonts-to-my-system.html
+---
+
+I downloaded a load of fonts (ttf amd otf). I put these into a local folder:<br /><b>.local/share/fonts</b><br /><br />to configure the OS to recognize the new fonts fontconfig needs to be installed:<br /><b>sudo xbps-install -S fontconfig</b><br /><br />fc-cache -fv rebuilds the font cache<b>&nbsp;</b><br />fc-list: family lists the installed fontson the system<br /><br />Infinality font rendering<br /><br />

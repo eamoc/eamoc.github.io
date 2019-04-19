@@ -1,0 +1,12 @@
+---
+layout: post
+title: Audio setup in Void linux
+date: '2019-03-20T09:03:00.002-07:00'
+author: "@eamoc"
+tags: 
+modified_time: '2019-03-20T09:46:35.065-07:00'
+blogger_id: tag:blogger.com,1999:blog-6955428370236550107.post-3332334424673065775
+blogger_orig_url: https://eamoc.blogspot.com/2019/03/audio-setup-in-void-linux.html
+---
+
+After installed Void, I needed top configure the audio setup.<br />To do this I first installed the alsa-utils package:<br /><br /><div style="text-align: center;"><b>sudo xbps-install -S alsa-utils</b></div><div style="text-align: center;"><br /></div><div style="text-align: left;">Then I added myself to the audio group:</div><div style="text-align: left;"><br /></div><div style="text-align: center;"><b>sudo usermod -a -G audio eamoc</b></div><div style="text-align: left;"><br /></div><div style="text-align: left;">To find out what the active audio interface is, do:</div><div style="text-align: center;"><b>cat /proc/asound/modules</b></div><br /><div style="text-align: left;"></div><div style="text-align: left;"></div><div style="text-align: left;">This will display the module order in the kernel:</div><div style="text-align: left;"><br /></div><div style="text-align: left;"><b>➜ cat /proc/asound/modules </b><br /><b>&nbsp;0 snd_hda_intel</b><br /><b>&nbsp;1 snd_hda_intel</b><br /><b>&nbsp;2 snd_usb_audio</b><br /><b>&nbsp;3 snd_usb_audio</b><br /><br />To configure my system correctly, I create a file .asoundrc in my home directory.<br /><b> </b><br /><div style="text-align: center;"><b>vim ~/.asoundrc</b></div><b><br /></b>It turns out that on my system, the interface that I want to use is number 3, so I go:<br /><b>➜ cat &lt;&lt;EOT &gt;&gt; .asoundrc <br />defaults.ctl.card 3;<br />defaults.pcm.card 3;<br />EOT</b><br /><br />Then I reboot</div>

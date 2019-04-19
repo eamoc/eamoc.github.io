@@ -1,0 +1,12 @@
+---
+layout: post
+title: holding the execution window open
+date: '2014-08-03T10:47:00.000-07:00'
+author: "@eamoc"
+tags: 
+modified_time: '2019-01-28T03:16:34.547-08:00'
+blogger_id: tag:blogger.com,1999:blog-6955428370236550107.post-2837332989595515040
+blogger_orig_url: https://eamoc.blogspot.com/2014/08/holding-execution-window-open.html
+---
+
+A slight problem was encountered when exiting a program, it returns immediately to the console. If there is for example a diagnostic string that you want to look for, it will not be visible as the program terminates and the window returns to the standard console.<br /><br />A simple solution is to have a <b>getch() </b>right before the function exits, However this may be platform specific (it requires conio.h, see previous post), and it does not conform to the C++ standard.<br />The more accepted way is to do: <b>cin.get();</b><br /><br />Both of the above methods simply halt the execution of the code until a character is entered at the keyboard. Then the program terminates and control reverts back tot he command line<br /><br />

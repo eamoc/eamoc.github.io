@@ -1,0 +1,12 @@
+---
+layout: post
+title: List the Block devices attached to the system
+date: '2014-06-08T10:53:00.000-07:00'
+author: "@eamoc"
+tags: 
+modified_time: '2019-01-28T03:16:38.633-08:00'
+blogger_id: tag:blogger.com,1999:blog-6955428370236550107.post-3787852429186801120
+blogger_orig_url: https://eamoc.blogspot.com/2014/06/list-block-devices-attached-to-system.html
+---
+
+<b> lsblk -o name,label,size,fstype,model</b><br />Handy command for displaying the block devices attached to the system:<br /><i><br /> lsblk -o name,label,size,fstype,model<br />NAME   LABEL   SIZE FSTYPE MODEL<br />sda          465.8G        ST3500418AS     <br />├─sda1           2M ext4   <br />├─sda2         128M ext2   <br />├─sda3         512M swap   <br />└─sda4       465.1G ext4   <br />sdb            1.8T ext3   42AS            <br />├─sdb1           1T ext4   <br />└─sdb2         839G ext4   <br />sr0           1024M        DVD+-RW DVD8801 <br /></i><br />

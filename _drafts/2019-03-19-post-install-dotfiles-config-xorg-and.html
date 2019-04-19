@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'Post install: dotfiles config, Xorg and i3 config'
+date: '2019-03-19T10:11:00.000-07:00'
+author: "@eamoc"
+tags: 
+modified_time: '2019-03-19T10:11:21.816-07:00'
+blogger_id: tag:blogger.com,1999:blog-6955428370236550107.post-2742322656402747534
+blogger_orig_url: https://eamoc.blogspot.com/2019/03/post-install-dotfiles-config-xorg-and.html
+---
+
+In the Void distribution, there is a directory called /etc/skel, which contains skeleton files for .xinitrc and .xsession.<br /><br />Copy the . xinitrc file to the home directory. <br /><br />.Xresources<br />This is a user level config file usually located in the users home directory. It contains the configuration parameters to set X resources for X client applications.<br />Among other things, urxvt parameters are set here<br />.xinitrc<br />.xsession<br />.Xprofile <br /><br />Pull down the dotfiles from GitHub:<br />git clone https://github.com/eamoc/bin<br />git clone https://github.com/eamoc/dotfiles<br /><br />Add the following to the config file in dotfiles <br />If [[ -z $DISPLAY ]] &amp;&amp; [[ $(tty) = /Dev/tty ]]; then exec startx; fi<br /><br />Obviously if these changes are pushed up to github, they won't have to be repeated subsequently.<br /><br />We need to break this down understand display variable and tty<br />Only console users are allowed to run the x server<br />To ensure startx runs on login, copy the following in to bash_profile:<br />if [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then exec startx fi<br /><br />Install git.<br /><br />Pull down my dotfiles as described previously.<br /><br />for i3 install<br /><br />i3-gaps feh xrandr arandr rxvt-unicode xprop<br /><br />Using arandr, I can extract the information and then use 'xrandr always' in my i3 config file<br /><br />for development<br />base-devel<br /><br />for chat<br />irssi<br /><br />

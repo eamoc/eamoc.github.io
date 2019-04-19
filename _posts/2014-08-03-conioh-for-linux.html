@@ -1,0 +1,12 @@
+---
+layout: post
+title: conio.h for linux
+date: '2014-08-03T11:03:00.000-07:00'
+author: "@eamoc"
+tags: 
+modified_time: '2019-03-20T10:03:05.592-07:00'
+blogger_id: tag:blogger.com,1999:blog-6955428370236550107.post-1078941873173834390
+blogger_orig_url: https://eamoc.blogspot.com/2014/08/conioh-for-linux.html
+---
+
+<b>conio.h</b> is a C header file used in DOS applications for console input and output.<br /><br />Its member functions are:<br /><br />kbhit - Determines if a keyboard key was pressed.<br />getch - Reads a character directly from the console without buffer, and without echo.<br />getche - Reads a character directly from the console without buffer, but with echo.<br />ungetch - Puts the character c back into the keyboard buffers.<br />cgets - Reads a string directly from the console.<br />cscanf - Reads formatted values directly from the console.<br />putch - Writes a character directly to the console.<br />cputs - Writes a string directly to the console.<br />cprintf - Formats values and writes them directly to the console.<br />clrscr - Clears the screen.<br /><br />There is a linux implementation available for download at:<br /><br /><b>sourceforge.net/projects/linux-conioh/</b><br /><br />It needs ncurses to be installed for it to work:<br /><br /><b>sudo apt-get install libncurses5-dev</b><br /><br />When compiling my code I included the <b>lncurses</b> linker option.<br />Even though the compiler knows what the function calls look like by including the header, the linker needs the library file to find the relevant code<br /><br />This can be done like this:<br /><b>g++ -o binary_output file1.cpp  file1.h  main.cpp -lncurses</b><br /><br />

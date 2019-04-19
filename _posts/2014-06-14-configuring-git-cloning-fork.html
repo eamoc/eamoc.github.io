@@ -1,0 +1,12 @@
+---
+layout: post
+title: Configuring Git, Cloning a Fork
+date: '2014-06-14T10:44:00.000-07:00'
+author: "@eamoc"
+tags: 
+modified_time: '2019-01-28T03:16:37.815-08:00'
+blogger_id: tag:blogger.com,1999:blog-6955428370236550107.post-5416444617318599843
+blogger_orig_url: https://eamoc.blogspot.com/2014/06/configuring-git-cloning-fork.html
+---
+
+With the git client installed you can then connect to GitHub, and fork some interesting repos, and push your own stuff up there also.<br /><br />First, configure the git client with your usename and email as specified on the github account<br /><br /><b>$ git config --global user.email "your_email@example.com"</b><br /><br /># Sets the default email for git to use when you commit<br /><br /><b>$ git config --global user.name "Your Name Here"</b><br /><br /># Sets the default name for Git to use when you commit<br /><br /><b>$ git config --global credential.helper cache</b><br /><br /># Set git to use the credential memory cache<br /><br />The default time limit is 15 minutes, this can be changes to, say, an hour:<br /><br /><b>$ git config --global credential.helper 'cache --timeout=3600'</b><br /><br /># Set the cache to timeout after 1 hour (setting is in seconds)<br /><br />Once you have forked the repo, you have to clone it on to your local drive:<br /><br /><b>$ git clone https://github.com/username/RepoInQuestion.git</b><br /><br /># Clones your fork of the repository into the current directory in terminal<br /><br />You can specifiy which directory to fork the repo in:<br /><br /><b>$ git clone https://github.com/username/RepoInQuestion.git /path/to/the relevant/directory</b><br /><br />This directory will be created if it does not exist, providing you have access to the parent directory.<br /><br />

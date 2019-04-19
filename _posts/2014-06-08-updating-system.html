@@ -1,0 +1,12 @@
+---
+layout: post
+title: Updating the System
+date: '2014-06-08T09:54:00.000-07:00'
+author: "@eamoc"
+tags: 
+modified_time: '2019-01-28T03:16:39.044-08:00'
+blogger_id: tag:blogger.com,1999:blog-6955428370236550107.post-6507338668639927796
+blogger_orig_url: https://eamoc.blogspot.com/2014/06/updating-system.html
+---
+
+First the Portage Tree needs to be updated:<br /><b>emerge --sync</b><br /><br />Then portage can search for and apply updates to any installed programs:<br /><b>emerge --update --ask @world</b><br /><br />This command will not look for updates to any dependencies that were installed by any of the installed programs.<br />For this use the <b>deep</b> keyword:<br /><b>emerge --update --deep @world</b><br /><br />This will not look for updates to any <i>build dependencies</i>. I.e. packages that were needed for the compile and build stage of other packages.<br />To include these, and to ensure any USE flag changes are taken into account, run:<br /><b>emerge --update --deep --with-bdeps=y --newuse @world</b><br /><br />This is basically a FULL update to the system.<br /><br />Now check for obsolete dependencies:<br /><b>emerge --depclean</b><br /><br />Finally rebuild the applications that were dynamically linked to the now-removed software titles but don't require them anymore:<br /><b>revdep-rebuild</b><br /><br />

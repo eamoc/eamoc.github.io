@@ -1,0 +1,12 @@
+---
+layout: post
+title: installing and configuring X Server
+date: '2018-02-12T12:50:00.000-08:00'
+author: "@eamoc"
+tags: 
+modified_time: '2019-01-24T13:08:31.071-08:00'
+blogger_id: tag:blogger.com,1999:blog-6955428370236550107.post-4856166786502489074
+blogger_orig_url: https://eamoc.blogspot.com/2018/02/installing-and-configuring-x-server.html
+---
+
+&nbsp;after I installed the base system I had to install x server and associated packages.<br />Doing a full xorg install will clobber my machine with loads of perfunctory packages and dependencies so I did a minimal install of xorg.<br /><br />Xbps-install xorg-minimal xorg-fonts<br /><br />I then needed to install the right graphics driver.<br />I ran dmesg ! Grep amd<br />Copy and past from other post<br /><br /><br />xbps-install xf86-video-amdgpu<br /><br />Finally to get a base xserver configuration going I installed a basic terminal emulator, a simple window manager, and a clock application<br /><br />Xbps-install xterm xclock twm<br /><br />To kick off x, I simply run<br />Startx<br /><br />Now that x has been installed, it needs to be configured.<br /><br />i3-gaps has been previously installed, along with i3status. I need this to launch automatically when I run startx.<br />Xorg-minimal contains a package Called xinit. See man xinit for more details.<br />Basically xinit starts the x windows system. Users configuration parameters are contained In a file called .xinitrc, in the users home directory.<br />In this file type in Exec i3.<br /><br /><br /><br /><br /><br />Previously I had a system configuration command in my i3 config file namely:<br /><br /><div style="text-align: center;"><b><span style="font-family: &quot;trebuchet ms&quot; , sans-serif;">exec xrdb /home/eamoc/.XResources </span></b></div><br />&nbsp;where it would have been more appropriate to run the command with at the beginning of the X Server session, before the Window Manager starts. The way to do this is to create the <b>.xprofile</b> file in the home directory.<br /><br />

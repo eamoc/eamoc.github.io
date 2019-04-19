@@ -1,0 +1,12 @@
+---
+layout: post
+title: Users and Groups
+date: '2014-06-04T15:17:00.000-07:00'
+author: "@eamoc"
+tags: 
+modified_time: '2019-01-28T03:16:39.859-08:00'
+blogger_id: tag:blogger.com,1999:blog-6955428370236550107.post-1373641790240000221
+blogger_orig_url: https://eamoc.blogspot.com/2014/06/users-and-groups.html
+---
+
+Adding users is done by the <b>useradd</b> command<br />eg: <b>useradd -m -G users,wheel,audio -s /bin/bash <i>username</i></b><br />the -m switch creates the users home directory <br />the -G switch adds the users to the specified groups. Note these groups must exist in /etc/group<br /><br />To administer existing users, the <b>gpasswd</b> command can be used:<br /><b>for x in cdrom cdrw usb ; do gpasswd -a username $x ; done</b><br /><br />This just adds existing users to new groups that were not necessarily specified when the user was first created.<br /><br />Note, to create a group use <b>groupadd</b><br />to delete a group, use <b>groupdel</b>

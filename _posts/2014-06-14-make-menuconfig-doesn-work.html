@@ -1,0 +1,12 @@
+---
+layout: post
+title: make menuconfig doesn't work
+date: '2014-06-14T08:11:00.000-07:00'
+author: "@eamoc"
+tags: 
+modified_time: '2019-01-28T03:16:38.222-08:00'
+blogger_id: tag:blogger.com,1999:blog-6955428370236550107.post-965220201260371272
+blogger_orig_url: https://eamoc.blogspot.com/2014/06/make-menuconfig-doesn-work.html
+---
+
+make menuconfig doesn't work!<br /><br />Yikes! this can happen because cleaning all the package dependencies  <b>emerge --depclean</b> removed all the kernel source code.<br /><br />find out what kernel /usr/src/linux points to:<br /><b><br />eamoc@knut ~ $ ls -l /usr/src/linux<br />lrwxrwxrwx 1 root root 20 May 28 00:28 /usr/src/linux -&gt; linux-3.12.20-gentoo</b><br />then emerge the appropirate sources:<br /><b><br />sudo emerge -av sys-kernel/gentoo-sources:3.12.20</b><br /><br />Problem sorted

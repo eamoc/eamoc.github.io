@@ -1,0 +1,12 @@
+---
+layout: post
+title: Fonts were sketchy after install....
+date: '2017-07-25T05:42:00.001-07:00'
+author: "@eamoc"
+tags: 
+modified_time: '2018-02-11T12:18:47.161-08:00'
+blogger_id: tag:blogger.com,1999:blog-6955428370236550107.post-1151981978052072508
+blogger_orig_url: https://eamoc.blogspot.com/2017/07/fonts-were-sketchy-after-install.html
+---
+
+I had to create symbolic links like the following to sort&nbsp; this out:<br /><br /><pre class="code"><b>for i in /usr/share/fontconfig/conf.avail/*.conf do; sudo ln -s $i "/etc/font/conf.d/$i"; done</b></pre><br />Basoically I followed this article, still doesnt work tho'<br />http://blog.brunomiguel.net/geekices/how-to-get-good-font-rendering-in-void-linux<br /><br /><br />

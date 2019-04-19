@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'Developing C/C++ code at the command line: Part 2'
+date: '2014-07-14T10:25:00.000-07:00'
+author: "@eamoc"
+tags: 
+modified_time: '2019-01-28T03:16:35.365-08:00'
+blogger_id: tag:blogger.com,1999:blog-6955428370236550107.post-1267048145485316306
+blogger_orig_url: https://eamoc.blogspot.com/2014/07/developing-cc-code-at-command-line-part.html
+---
+
+cc, gcc and g++<br /><br />cc and gcc can be used interchangeably.<br /><br />cc is the c compiler, and gcc stands for Gnu Compiler Collection<br /><br />cc is fine for compiling C programs but will not do for compiling C++ code<br /><br />if I do a dpkg -l g++:<br /><br /><b>eamoc@knut:~$ dpkg -l gcc | grep compiler<br />ii&nbsp; gcc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4:4.8.2-1ubuntu6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; amd64&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GNU C compiler<br />eamoc@knut:~$ dpkg -l g++ | grep compiler<br />ii&nbsp; g++&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4:4.8.2-1ubuntu6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; amd64&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GNU C++ compiler<br />eamoc@knut:~$ </b><br />
